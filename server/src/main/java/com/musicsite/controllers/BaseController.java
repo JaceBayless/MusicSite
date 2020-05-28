@@ -1,4 +1,4 @@
-package tech.noahgeren.template.controllers;
+package com.musicsite.controllers;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;

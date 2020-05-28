@@ -1,4 +1,4 @@
-package tech.noahgeren.template.security;
+package com.musicsite.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,8 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import tech.noahgeren.template.domain.User;
+import com.musicsite.domain.User;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	

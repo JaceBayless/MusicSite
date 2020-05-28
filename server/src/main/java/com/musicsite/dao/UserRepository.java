@@ -1,9 +1,9 @@
-package tech.noahgeren.template.dao;
+package com.musicsite.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import tech.noahgeren.template.domain.User;
+import com.musicsite.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String>{

@@ -1,4 +1,4 @@
-package tech.noahgeren.template.config;
+package com.musicsite.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,8 +15,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import tech.noahgeren.template.security.JWTAuthenticationFilter;
-import tech.noahgeren.template.security.JWTAuthorizationFilter;
+import com.musicsite.security.JWTAuthenticationFilter;
+import com.musicsite.security.JWTAuthorizationFilter;
 
 @Configuration
 @EnableWebSecurity

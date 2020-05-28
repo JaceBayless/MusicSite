@@ -1,4 +1,4 @@
-package tech.noahgeren.template.security;
+package com.musicsite.security;
 
 import java.io.IOException;
 import java.util.ArrayList;

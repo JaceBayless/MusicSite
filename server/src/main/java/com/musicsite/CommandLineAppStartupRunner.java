@@ -1,12 +1,12 @@
-package tech.noahgeren.template;
+package com.musicsite;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import tech.noahgeren.template.dao.UserRepository;
-import tech.noahgeren.template.domain.User;
+import com.musicsite.dao.UserRepository;
+import com.musicsite.domain.User;
 
 @Component
 public class CommandLineAppStartupRunner implements CommandLineRunner{

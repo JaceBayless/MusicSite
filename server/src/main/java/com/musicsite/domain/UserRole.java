@@ -1,4 +1,4 @@
-package tech.noahgeren.template.domain;
+package com.musicsite.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,4 +1,4 @@
-package tech.noahgeren.template.domain;
+package com.musicsite.domain;
 
 import java.util.LinkedList;
 import java.util.List;
