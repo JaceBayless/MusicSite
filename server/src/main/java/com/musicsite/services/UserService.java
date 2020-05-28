@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.musicsite.dao.UserRepository;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService{
+public class UserService implements UserDetailsService{
 	
 	@Autowired
 	private UserRepository userRepo;

@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BaseController implements ErrorController {
@@ -14,6 +17,18 @@ public class BaseController implements ErrorController {
 	@Override
 	public String getErrorPath() {
 		return "/error";
+	}
+	
+	@GetMapping("/register")
+	public String registerPage() {
+		return "index";
+	}
+	
+	@ResponseBody
+	@PostMapping("/register")
+	public Object register() {
+		// TODO: Add registration code here
+		return null;
 	}
 	
 	@RequestMapping("/error")
