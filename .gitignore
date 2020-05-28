@@ -1,0 +1,18 @@
+### Client ###
+*.DS_Store
+*node_modules
+*.vscode
+*dist
+
+## Server ##
+.gradle
+**/build/**
+**/bin/**
+!**/src/main/**
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
