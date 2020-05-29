@@ -3,11 +3,12 @@ import App from "@/App";
 import router from "@/router";
 import store from "@/store";
 import 'bootstrap-vue/dist/bootstrap-vue.css';
-import BootstrapVue from 'bootstrap-vue';
+import {BootstrapVue, BootstrapVueIcons} from 'bootstrap-vue';
 import axios from "axios";
 import Cookies from "js-cookie";
 
 Vue.use(BootstrapVue);
+Vue.use(BootstrapVueIcons);
 
 Vue.config.productionTip = false;
 

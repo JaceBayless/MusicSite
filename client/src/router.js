@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/',
     component: Index,
-    meta: { requiresAuth: true }
+    //meta: { requiresAuth: true }
   },
   {
     path: '/login',
