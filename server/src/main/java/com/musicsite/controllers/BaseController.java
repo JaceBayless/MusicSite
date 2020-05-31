@@ -3,17 +3,25 @@ package com.musicsite.controllers;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.musicsite.domain.User;
+import com.musicsite.services.UserService;
 
 @Controller
 public class BaseController implements ErrorController {
 
+	@Autowired
+	private UserService userService;
+	
 	@Override
 	public String getErrorPath() {
 		return "/error";
@@ -26,9 +34,8 @@ public class BaseController implements ErrorController {
 	
 	@ResponseBody
 	@PostMapping("/register")
-	public Object register() {
-		// TODO: Add registration code here
-		return null;
+	public boolean register(@RequestBody User user) {
+		return userService.createUser(user);
 	}
 	
 	@RequestMapping("/error")
