@@ -59,8 +59,8 @@ export default {
 }
 
 .primary-blue {
-  background-color: #267bd5;
-  color: #fff;
+  background-color: #267bd5 !important;
+  color: #fff !important;
 }
 
 .display-font {

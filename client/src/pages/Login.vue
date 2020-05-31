@@ -1,7 +1,7 @@
 <template>
   <b-row>
     <b-col cols="12" md="6" offset-md="3" class="my-md-4 py-3">
-      <b-tabs v-model="tabPage" content-class="mt-3" fill>
+      <b-tabs active-nav-item-class="primary-blue" v-model="tabPage" content-class="mt-3" fill>
         <b-tab title="Login" active>
           <h1 class="pb-3 border-bottom text-center">Login</h1>
           <b-alert :show="loggedOut" variant="success" dismissible>You have been logged out.</b-alert>
@@ -14,10 +14,16 @@
           <b-alert v-model="registered" variant="success" dismissible>Registration completed.</b-alert>
           <b-form @submit.prevent="login">
             <b-form-group label="Username:" label-for="username">
-              <b-form-input v-model="username" id="username" name="username"></b-form-input>
+              <b-form-input v-model="username" id="username" name="username" required></b-form-input>
             </b-form-group>
             <b-form-group label="Password:" label-for="password">
-              <b-form-input type="password" v-model="password" id="password" name="password"></b-form-input>
+              <b-form-input
+                type="password"
+                v-model="password"
+                id="password"
+                name="password"
+                required
+              ></b-form-input>
             </b-form-group>
             <div class="text-center">
               <b-button type="submit" variant="primary" :disabled="loading">Login</b-button>
@@ -30,7 +36,12 @@
           <b-alert v-model="registerError" variant="danger" dismissible>Username already exists.</b-alert>
           <b-form @submit.prevent="register">
             <b-form-group label="Username:" label-for="register-username">
-              <b-form-input v-model="username" id="register-username" name="register-username"></b-form-input>
+              <b-form-input
+                v-model="username"
+                id="register-username"
+                name="register-username"
+                required
+              ></b-form-input>
             </b-form-group>
             <b-form-group label="Password:" label-for="register-password">
               <b-form-input
@@ -38,6 +49,8 @@
                 v-model="password"
                 id="register-password"
                 name="register-password"
+                :state="passwordMatch"
+                required
               ></b-form-input>
             </b-form-group>
             <b-form-group label="Confirm Password:" label-for="confirm-password">
@@ -46,6 +59,8 @@
                 v-model="confirmPassword"
                 id="confirm-password"
                 name="confirm-password"
+                :state="passwordMatch"
+                required
               ></b-form-input>
             </b-form-group>
             <div class="text-center">
@@ -69,6 +84,7 @@ export default {
       loading: false,
       error: false,
       passwordError: false,
+      passwordMatch: null,
       registerError: false,
       registered: false,
       tabPage: 0
@@ -93,8 +109,10 @@ export default {
     register() {
       if (this.password !== this.confirmPassword) {
         this.passwordError = true;
+        this.passwordMatch = false;
       } else {
         this.passwordError = false;
+        this.passwordMatch = null;
         this.loading = true;
         axios({
           url: getUrl("register"),
