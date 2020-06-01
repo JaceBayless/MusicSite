@@ -7,10 +7,8 @@
         </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
-          <b-nav-form inline class="px-md-3" autocomplete="off">
-            <b-form-input size="md" class="rounded-full search" placeholder="Search"></b-form-input>
-          </b-nav-form>
-          <b-navbar-nav class="ml-auto header-font h5">
+          <b-form-input size="md" class="rounded-full search my-md-0 my-2" placeholder="Search" autocomplete="off"></b-form-input>
+          <b-navbar-nav class="ml-auto header-font h5 my-md-0 mt-2">
             <b-nav-item-dropdown class="active" right>
               <template v-slot:button-content>
                 <b-avatar :src="profileImageUrl" size="3rem" class="mx-2"></b-avatar>
@@ -33,7 +31,7 @@
         <b-col class="col-12 my-2" style="font-size:14pt;">
           <router-link to="#" class="text-white">About Us</router-link>
           <router-link to="#" class="text-white mx-5">Contact Us</router-link>
-          <b-link href="https://github.com/JaceBayless/MusicSite" class="text-white">Github</b-link>
+          <b-link href="https://github.com/JaceBayless/MusicSite" class="text-white">GitHub</b-link>
         </b-col>
         <b-col
           class="col-12 my-1"
@@ -74,16 +72,22 @@ export default {
 .rounded-full {
   border-radius: 1000px;
 }
+</style>
 
+<style scoped>
+@media (min-width: 768px){
+  .search{
+    width:auto !important;
+  }
+}
+
+.bg-e8 {
+  background-color: #e8e8e8;
+}
 .search {
   background: url("data:image/svg+xml,%3Csvg data-v-7ba5bd90='' viewBox='0 0 16 16' width='1em' height='1em' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%236c757d'%3E%3Cg%3E%3Cpath fill-rule='evenodd' d='M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z'%3E%3C/path%3E%3Cpath fill-rule='evenodd' d='M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E")
     #fff no-repeat left 0.75rem center/1rem 1rem;
   padding-left: 2.25rem;
-}
-</style>
-
-<style scoped>
-.bg-e8 {
-  background-color: #e8e8e8;
+  width: 100%;
 }
 </style>

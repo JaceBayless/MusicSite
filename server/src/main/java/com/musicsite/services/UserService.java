@@ -24,6 +24,9 @@ public class UserService implements UserDetailsService{
 	}
 
 	public boolean createUser(User user) {
+		if(userRepo.existsById(user.getUsername())) {
+			return false;
+		}
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return (userRepo.save(user) != null);
 	}
