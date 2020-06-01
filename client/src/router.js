@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import store from "@/store";
 import Index from "@/pages/Index";
 import Login from "@/pages/Login";
+import Feed from "@/pages/Feed";
 import NotFound from "@/pages/NotFound";
 
 Vue.use(VueRouter);
@@ -25,9 +26,14 @@ const routes = [
     }
   },
   {
+    path: '/feed',
+    component: Feed,
+    meta: { requiresAuth: true }
+  },
+  {
     path: '*',
     component: NotFound
-  }
+  },
 ];
 
 const router = new VueRouter({

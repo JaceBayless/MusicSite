@@ -31,7 +31,7 @@
         <b-col class="col-12 my-2" style="font-size:14pt;">
           <router-link to="#" class="text-white">About Us</router-link>
           <router-link to="#" class="text-white mx-5">Contact Us</router-link>
-          <b-link href="https://github.com/JaceBayless/MusicSite" class="text-white">Github</b-link>
+          <b-link href="https://github.com/JaceBayless/MusicSite" class="text-white">GitHub</b-link>
         </b-col>
         <b-col
           class="col-12 my-1"
