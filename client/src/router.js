@@ -4,6 +4,7 @@ import store from "@/store";
 import Index from "@/pages/Index";
 import Login from "@/pages/Login";
 import Feed from "@/pages/Feed";
+import ContactUs from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
 Vue.use(VueRouter);
@@ -29,6 +30,10 @@ const routes = [
     path: '/feed',
     component: Feed,
     meta: { requiresAuth: true }
+  },
+  {
+    path: '/contact-us',
+    component: ContactUs
   },
   {
     path: '*',

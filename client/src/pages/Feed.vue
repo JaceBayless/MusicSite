@@ -1,5 +1,5 @@
 <template>
-  <b-row>
+  <b-row class="py-4">
     <b-col cols="12" md="8" offset-md="2" class="my-3" v-if="createPost">
       <b-card no-body>
         <b-tabs pills card justified>
@@ -31,7 +31,8 @@
                 ></b-form-textarea>
               </b-form-group>
               <div class="text-center">
-                <b-button type="Submit" variant="primary" :disabled="loading">Share</b-button>
+                <b-button type="Submit" class="mx-2" variant="primary" :disabled="loading">Share</b-button>
+                <b-button variant="danger" class="mx-2" @click="createPost=false">Cancel</b-button>
               </div>
             </b-form>
           </b-tab>
@@ -63,7 +64,8 @@
                 ></b-form-textarea>
               </b-form-group>
               <div class="text-center">
-                <b-button type="Submit" variant="primary" :disabled="loading">Suggest</b-button>
+                <b-button type="Submit" class="mx-2" variant="primary" :disabled="loading">Suggest</b-button>
+                <b-button variant="danger" class="mx-2" @click="createPost=false">Cancel</b-button>
               </div>
             </b-form>
           </b-tab>
@@ -104,15 +106,21 @@
                 ></b-form-textarea>
               </b-form-group>
               <div class="text-center">
-                <b-button type="Submit" variant="primary" :disabled="loading">Review</b-button>
+                <b-button type="Submit" class="mx-2" variant="primary" :disabled="loading">Review</b-button>
+                <b-button variant="danger" class="mx-2" @click="createPost=false">Cancel</b-button>
               </div>
             </b-form>
           </b-tab>
         </b-tabs>
       </b-card>
     </b-col>
-    <b-col v-else>
-      <b-button @click="createPost = true" variant="primary">Create Post</b-button>
+    <b-col md="8" offset-md="2" cols="10" offset="1" v-else>
+      <b-input-group>
+        <b-form-input v-model="song" type="text" placeholder="Enter Song"></b-form-input>
+        <template v-slot:append>
+          <b-button @click="createPost = true" variant="primary">Create Post</b-button>
+        </template>
+      </b-input-group>
     </b-col>
   </b-row>
 </template>
