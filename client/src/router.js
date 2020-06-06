@@ -4,13 +4,12 @@ import store from "@/store";
 import Index from "@/pages/Index";
 import Login from "@/pages/Login";
 import Feed from "@/pages/Feed";
-import ContactUs from "@/pages/Contact";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     component: Index,
     //meta: { requiresAuth: true }
@@ -29,11 +28,11 @@ const routes = [
   {
     path: '/feed',
     component: Feed,
-    meta: { requiresAuth: true }
+    // meta: { requiresAuth: true }
   },
   {
-    path: '/contact-us',
-    component: ContactUs
+    path: '/contact',
+    component: Contact
   },
   {
     path: '*',
@@ -52,7 +51,9 @@ router.beforeEach((to, from, next) => {
     if (!store.getters.isAuthenticated) {
       next({
         path: '/login',
-        query: { redirect: to.fullPath }
+        query: {
+          redirect: to.fullPath
+        }
       });
     } else {
       next();
